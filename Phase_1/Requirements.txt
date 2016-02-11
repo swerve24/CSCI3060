@@ -1,0 +1,27 @@
+- Assume accounts cannot complete more than 9,999 transactions per day.
+- Check for EoF to see when the input file is complete.
+- A second login attempt will be rejected and ignored. Subsequent transactions will be considered as part of the first account login.
+- Front end is used to generate transaction output files that the back end will manage. Front end must also check for constraints and create output files that meet these constraints.
+- Front end should check for transaction constraints. (Includes trying to withdraw more money than the account is allowed). If the front end is restarted and try again, it should still correctly fail to withdraw more money than allowed.
+- Account balance can't go into negatives.
+- Front end should should keep track of balances.
+- Front end should not be reading in transaction output files, or start fresh each session from the master accounts list.
+- Deposits should niether be available in the same login session or in the same day. You cannot access the funds until the next day after the back end has applied the transactions.
+- An admin can delete an account that has been disabled.
+- If the account name for account creation is greater than 20 characters, it should be truncated if necessary.
+- The special bank account with account holder's name END_OF_FILE, the account number, active/disabled, and balance do not matter.
+- The above rule for END_OF_FILE also applies to end of session line.
+​- Everyone can add an extra flag to the end of the current and master bank accounts files, e.g. NNNNN_AAAAAAAAAAAAAAAAAAAA_S_PPPPPPPP_Q, where Q is S for student plans and N for non-student plans. (Copy pasta, you're on your own.)
+- By default, accounts should be non-student plans.
+- Changeplan should be able to change from student to non-student plans and vice-versa.
+- Users should not be allowed to access the END_OF_FILE account.
+- The front end needs to support input from command line input and text file. And it should wait unless your text file told it to terminate.
+- Money will always be in the format of #####.## where # is a number 0-9. No dollar signs. Values that don't fit in this format aren't allowed.
+- Admins can perform any action when they've logged into an account, unless the account is disabled. Reject log ins on non-matching name/accounts, even if they are an admin.
+- Admins are allowed any amount that fit the #####.## format.
+- Deduct the fee first with withdrawals, and then check if the remaining amount is enough. If it isn't, return the free.
+- In paybill the company name will always be provided as 2 letters.
+- Do not worry about the case where an account is deleted, no need to reserve the account number.
+- When an account is disabled, the use can login, but no transactions can be made.
+- Admins can re-enable an account. (Turn an account from disabled to active)
+- At the end of each session, when the logout transaction is processed, a bank account transaction file for the session is written.
