@@ -49,10 +49,33 @@ New Feature:
 - Bank will only give out paper money, no coins. (i.e. $5, $10, $20, $50, $100)
 - Assume bank is Canadian money only.
 - Paper currency applies only to withdrawals.
+- If you run disable on a enabled account, you immediately can't run transactions with it.
 - If you run enable on a disabled account, you can immediately run transactions with it again.
 - If an account is changed to a student halfway through, the charges are at the student rate.
 - "00" (end of session) is the transaction code for logging out.
 - CC_AAAAAAAAAAAAAAAAAAAA_NNNNN_PPPPPPPP_QM is the format for each transaction in the bank account transaction file.
-- NNNNN_AAAAAAAAAAAAAAAAAAAA_S_PPPPPPPP is the format for the current bank account.
+- NNNNN_AAAAAAAAAAAAAAAAAAAA_S_PPPhePPPPP is the format for the current bank account.
 - Maximum for withdrawal and transfer is for the entire day. These are limits on the account. Not the person.
-- 
+- If a transaction is cancelled, it should return back to where they can try another transaction.
+- Transfers are greating that $0.
+- An admin can pay a bill for any account.
+- The maximum amount of money that can be paid to a bill holder is a current day is $2000.
+- The output should be transaction logs.
+- Even though deposited money cannot be accessed, keep track of it in the front end to not exceed the limit.
+- If an account is disabled, and you try to disable it, or if an account is enabled, and you try to enable it, it should just fail gracefully and not do anything. Do not be logged in the transaction file.
+- New accounts should have new names.
+- If an account is disabled, no one can transfer funds to it.
+- Responsibility of the back end to manage days.
+- Transaction limits apply to accounts.
+- You can deposit any amount. (Even cents, think of a cheque)
+- When depositing, they can deposit any amount as long as they stay about zero. (Depositing less money than the deposit fee)
+- An admin can deposit into any account. Standard users can only deposit into the account they logged into.
+- When an admin disables/enables an account, there should be only one transaction line.
+- When an admin does a transaction, the transaction line should have the account holder's name and number since the admin doesn't need to provide any identifiers.
+- When an admin logs in, the account holder and account name should be blank or filled with 0's. (make sure to have the correct amount of spaces or 0's)
+- If anything in the transaction file is not as long as the space of the format, it should be left aligned and the rest should be filled with spaces.
+- If miscellaneous information isn't necessary for the transaction file, fill it with spaces.
+- A created account can't be used in the same day.
+- For paybill the maximum is $2000 per company, not in total.
+- An account doesn't have to be disabled to be deleted.
+- Assume there are no errors in the accounts file.
