@@ -32,7 +32,7 @@ Out of ten. Distributed the following way:
 
 ######&rightarrow; Login
 
-- [   ] Transfer code will be 10. In the MM, `A` will be used for admin and `S` for standard user.
+- [   ] Transfer code will be `10`. In the `MM`, `A` will be used for admin and `S` for standard user.
 
 - [  **x** ] A second login attempt will be rejected and ignored. Subsequent transactions will be considered as part of the first account login.
 
