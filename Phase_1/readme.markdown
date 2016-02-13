@@ -38,15 +38,13 @@ Out of ten. Distributed the following way:
 
 - [ **x** ] Truncate account names if necessary
 
-- [   ] Users should not be able to access the END_OF_FILE account
+- [ **x** ] Users should not be able to access the END_OF_FILE account
 
 - [   ] When an administrator logs in, all irrelevant field should either be filled with zeros or spaces - make sure it must be the correct number for either.
 
 ######&rightarrow;Withdrawal
 
-- [   ] Specified amount *must* be in the format #####.## or it will not be accepted. No dollar signs.
-
-- [   ] Administrators have no monetary constraints, as long as the amount fits the format (#####.##)
+- [ **x** ] Specified amount *must* be in the format #####.## or it will not be accepted. No dollar signs.
 
 - [   ] Fees should be removed before the withdrawal is done
 
@@ -56,40 +54,39 @@ Out of ten. Distributed the following way:
 
 - **[   ] In the transaction file, *transfer* will be represented with two `02` lines, where the first implicitly represents the withdrawal and the second the deposit.**
 
-- [   ] Administrators have no monetary constraints, as long as the amount fits the format (#####.##)
+- [ **x** ] Administrators have no monetary constraints, as long as the amount fits the format (#####.##)
 
-- [   ] Transfers must be **bigger** than $0.
+- [ **x** ] Transfers must be **bigger** than $0.
 
-
+- [ **x** ] Disabled users cannot receive transfers.
 
 ######&rightarrow;Paybill
 
-- [   ] Administrators have no monetary constraints, as long as the amount fits the format (#####.##)
+- [ **x** ] Administrators have no monetary constraints, as long as the amount fits the format (#####.##)
 
-- [   ] Consider the different formats in which the company names may be inputted (e.g. "TV")
+- [ **x** ] Consider the different formats in which the company names may be inputted (e.g. "TV")
 
-- [   ] The 2000 constraint for standard users is per company.
-
+- [ **x** ] The 2000 constraint for standard users is per company, **per day**.
 
 ######&rightarrow;Deposit
 
-- [ **x**] Deposits should not be available neither in the same session **or in the same day**. Can only be accessed until the next day after the back end has applied the transactions.
+- [ **x**] Deposits should not be available for transactions neither in the same session **or in the same day**. Can only be accessed until the next day after the back end has applied the transactions.
+
+- [ **x** ] Administrators have no monetary constraints, as long as the amount fits the format (#####.##)
 
 ######&rightarrow;Create
 
 - [   ] Non-student is the default plan when creating an account.
 
-- [   ] No underscores in names.
+- [ **xs** ] No underscores in names.
 
-- [   ] A created accound can't be used in the same **day**.
+- [ **x** ] A created accound can't be used in the same **day**.
 
-
+- [   ] A new account can be made with the old account number of a deleted account.
 
 ######&rightarrow;Delete
 
 - [ **x** ] A disabled account **can** be deleted (by an administrator only).
-
-- [   ] A new account can be made with the old account number of a deleted account.
 
 - [   ] In the transaction line (*only one*) produced in the transaction file, there should be the account holder's name and number. The administrator does not have any identifiers.
 
@@ -97,17 +94,11 @@ Out of ten. Distributed the following way:
 
 - [   ] Once disabled, shouldn't wait until end of session for it to be effective should be immediate.
 
-- [   ] Cannot receive transfers.
-
 - [   ] In the transaction line (*only one*) produced in the transaction file, there should be the account holder's name and number. The administrator does not have any identifiers.
-
 
 ######&rightarrow;Change Plan
 
 - [   ] Transaction fees change immediately after an account changes plans.
-
-- [   ] Monetary constraint of 2000 for standard users is **for the day**.
-
 
 ######&rightarrow;Logout
 
