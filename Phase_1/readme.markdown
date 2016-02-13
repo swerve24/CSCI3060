@@ -18,7 +18,7 @@ Out of ten. Distributed the following way:
 | Test Plan | - | <font color='red'>Pending</font> | How your tests are organized (e.g. directories), how they will be run (shell scripts/DOS batch files), and how the output will be stored and organized for reporting and comparison with later runs (make text file printouts of any directory structures and script files created. <br>The test plan does not have to be a long report but a few paragraphs are probably necessary to explain the details.
 |<ul><li><u>Test input and output organization</u>: There is a good plan to keep test cases and results well organized</ul></li> | 2 marks | - | -
 |<ul><li><u>Test Run Plan</u>: There is a workable plan for running all test cases</ul></li> | 1 mark | - | -
-| Other | - | <font color='red'>Pending</font> | -
+| Other | - | <font color='goldenrod'>In progress</font> | -
 |<ul><li><u>Requirements Problems</u>: Problems found in the requirements are reported</ul></li> | 1 mark | - | Those already mentioned in the Slack #requirements channel will not be taken into account.
 
 ###Files needed for the test case
