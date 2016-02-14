@@ -1,7 +1,7 @@
 
 ((expression))		((description))
 
-login		Start a session for administrators and standard users. Required to invoke any 					  other commands.
+login		Start a session for administrators and standard users. Required to invoke any other commands.
 
 withdrawal	Withdraw money from a bank account.
 
