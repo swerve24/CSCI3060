@@ -11,4 +11,8 @@
 00011 Omar                 D 01000.00 N
 00012 Richie               A 00000.02 N
 00013 Paul                 A 00300.00 N
+00014 Bill                 A 01000.00 N
+00015 Steve                D 01000.00 N
+00016 Dave                 A 00200.00 N
+00017 Yoji                 A 00200.00 N
 99999 END_OF_FILE          D 00000.00 N
