@@ -1,0 +1,10 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information
+Mode in which you wish to login as:
+Enter Account holder’sname:
+You are currently logged in as an administrator
+Enter account holder’s name:
+Enter account number:
+Are you sure you want to delete acc_holder’s account acc_number?
+ERROR: This is not a valid input
+You have successfully logged out of the administrator account

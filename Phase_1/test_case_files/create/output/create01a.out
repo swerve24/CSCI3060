@@ -1,0 +1,12 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information.
+Mode in which you wish to login as:
+You are currently logged in as an administrator
+Enter new account holder’s name:
+Your account holder name has been truncated to: new_acc_holder_longe
+Enter the initial balance: 
+You have successfully created a new account.
+AccountNumber: acc_num
+Account holder’s name: new_acc_holder
+Account Balance: init_balance
+You have successfully logged out of the administrator account

@@ -1,0 +1,16 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information
+Mode in which you wish to login as:
+Enter account holder’s name:
+You are currently logged in as acc_holder
+Bank Account Number: acc_num
+Balance: balance
+Transaction Payment Plan: plan
+Status: status
+Enter your accountnumber:
+Enter the destination account number:
+Enter amount to transfer:
+Funds have been
+successfully transferred from account acc_num_fto account acc_num_t
+Newbalance: new_balance
+You have successfully logged out of your account 

@@ -1,0 +1,15 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information
+Mode in which you wish to login as:
+You are currently logged in as an administrator
+Enter account holder’sname:
+Enter account number:
+The account acc_number has been enabled successfully
+Enter origin account holder’s name:
+Enter origin account number:
+Enter company: 
+Enter amount to pay:
+Funds have been successfully paid a bill of amount_pay from account acc_num
+New balance: new_balance 
+You have successfully logged out of administrator account
+

@@ -1,0 +1,11 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information
+Mode in which you wish to login as:
+You are currently logged in as an administrator
+Enter account holder’sname:
+Enter origin account number:
+Enter company:
+ERROR: The company name is invalid
+Must be one of the following: EC, CQ or TV
+You have successfully logged out of administrator account
+

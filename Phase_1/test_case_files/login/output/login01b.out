@@ -1,0 +1,9 @@
+Welcome to Watermelon Banking System. Please login to begin or type in “help” for more information.
+Mode in which you wish to log in as: 
+Account holder’sname: 
+You are currently logged in as acc_holder
+BankAccount Number: acc_num
+Balance: balance
+Transaction PaymentPlan: plan
+Status: status 
+You have successfully logged out of your account.
