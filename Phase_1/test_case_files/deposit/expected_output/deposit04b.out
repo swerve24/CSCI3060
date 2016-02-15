@@ -4,9 +4,9 @@ Mode in which you wish to login as:
 Account holder’s name:
 You are currently logged in as Omar
 Bank Account Number: 00011
-Balance: $1000.00
-Transaction Payment Plan: non-student
-Status: disabled
+Balance: $01000.00
+Transaction Payment Plan: Non-student
+Status: Disabled
 Enter account number:
 ERROR: Your account is disabled; you may not deposit funds.
 You have successfully logged out of your account.

@@ -1,0 +1,13 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information.
+Mode in which you wish to login as:
+You are currently logged in as an administrator.
+Enter account holder’s name:
+Enter account number:
+The account 00005 has been enabled successfully
+Enter origin account holder’s name:
+Enter origin number:
+The transaction payment plan for account 00005 has been successfully changed to student.
+You have successfully logged out of administrator account.
+
+
