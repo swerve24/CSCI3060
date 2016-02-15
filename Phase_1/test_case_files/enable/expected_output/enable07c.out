@@ -1,0 +1,15 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information.
+Mode in which you wish to login as:
+You are currently logged in as an administrator.
+Enter account holder’s name:
+Enter account number:
+The account 00005 has been enabled successfully.
+Enter origin account holder’s name:
+Enter origin number:
+Enter amount to withdraw: 
+Funds have been successfully withdrawn from your account 00005.
+New balance: $0990.00 
+You have successfully logged out of administrator account.
+
+

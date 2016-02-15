@@ -1,13 +1,12 @@
 Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
-Mode in which you wish to login as:
+Enter mode in which you wish to login as:
 Account holder’s name:
-You are currently logged in as Ramond
+You are currently logged in as Ramond.
 Bank Account Number: 00008
 Balance: $01000.00
-Transaction Payment Plan: non-student
-Status: active
+Transaction Payment Plan: Non-student
+Status: Active
 Enter account number:
-Enter amount to deposit:
+Enter amount to deposit:You have successfully logged out of your account.
 ERROR: The amount entered is not valid.
-You have successfully logged out of your account.

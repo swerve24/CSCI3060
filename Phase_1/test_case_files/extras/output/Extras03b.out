@@ -1,14 +1,0 @@
-Welcome to Watermelon Banking System
-Please login to begin or type in “help” for more information
-Mode in which you wish to login as:
-You are currently logged in as an administrator
-Enter account holder’sname:
-Enter account number:
-The account acc_number has been enabled successfully
-Enter origin account holder’s name:
-Enter origin number:
-Enter amount to deposit: 
-Funds have been successfully added to the account acc_number
-New balance: new_balance 
-You have successfully logged out of administrator account
-
