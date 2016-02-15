@@ -1,11 +1,13 @@
 Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information
 Enter mode in which you wish to login as:
-You are currently logged in as Steve.
-Bank Account Number: 00015
+You are currently logged in as Tarzan.
+Bank Account Number: 00001
 Balance: $01000.00
 Transaction Payment Plan: Non-student
-Status: Disabled
+Status: Active
 Enter account number:
-ERROR: Your account is disabled; you may not pay any bills.
-You have successfully logged out of your account.
+ERROR: The account number entered is not valid.
+
+
+You have successfully logged out of your account 
