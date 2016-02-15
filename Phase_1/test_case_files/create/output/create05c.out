@@ -3,5 +3,6 @@ Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
 You are currently logged in as an administrator.
 Enter new account holder’s name:
-ERROR: This account name is already in use. Please pick a different one.
+Enter the initial balance:
+ERROR: The initial balance entered is not valid.
 You have successfully logged out of the administrator account.
