@@ -1,8 +1,9 @@
 Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information
 Mode in which you wish to login as:
-Enter Account holder’sname:
+Enter Account holder’s name:
 You are currently logged in as an administrator
 Enter account holder’s name:
-ERROR: The account holder name entered is not valid
-You have successfully logged out of the administrator account
+Enter account number:
+ERROR: The account holder name entered is not valid.
+You have successfully logged out of the administrator account.
