@@ -1,0 +1,13 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information.
+Mode in which you wish to login as:
+Enter Account holder’s name:
+You are currently logged in as Tarzan
+Bank Account Number: 00001
+Balance: $1000.00
+Transaction Payment Plan: non-student
+Status: active
+Mode in which you wish to login as: 
+You are currently logged in as an administrator.
+ERROR: You need to be an administrator to disable an account.
+You have successfully logged out of your account.
