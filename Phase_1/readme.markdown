@@ -13,7 +13,7 @@ Out of ten. Distributed the following way:
 | List of Test Cases and What They are to Test | - | <font color='green'>Complete</font> | A table of test names an intentions, (in English)
 |<ul><li><u>Descriptions</u>: Table of test cases telling which case each is intended to test. </li></ul> | 2 marks | - | Make sure to include all those included in the Slack #requirements channel.
 |<ul><li><u>Completeness</u>: Test cases cover majority of cases allowed by requirements, and include cases to test all constraints</li></ul> | 2 marks | - | -
-| Actual Test Case Inputs and Expected Outputs | - | <font color='goldenrod'>In progress</font> | For each case, the actual test input files and expected output files (as text file printouts). Need <i>at least</i> 80 test case files.
+| Actual Test Case Inputs and Expected Outputs | - | <font color='green'>Complete</font> | For each case, the actual test input files and expected output files (as text file printouts). Need <i>at least</i> 80 test case files.
 |<ul><li><u>Test Files</u>: All provided and with expected output</li></ul> | 2 marks | -
 | Test Plan | - | <font color='green'>Complete</font> | How your tests are organized (e.g. directories), how they will be run (shell scripts/DOS batch files), and how the output will be stored and organized for reporting and comparison with later runs (make text file printouts of any directory structures and script files created. <br>The test plan does not have to be a long report but a few paragraphs are probably necessary to explain the details.
 |<ul><li><u>Test input and output organization</u>: There is a good plan to keep test cases and results well organized</ul></li> | 2 marks | - | -
