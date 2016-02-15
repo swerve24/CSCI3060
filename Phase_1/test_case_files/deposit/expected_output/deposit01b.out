@@ -1,14 +1,10 @@
 Welcome to Watermelon Banking System
-Please login to begin or type in “help” for more information
+Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
+You are currently logged in as an administrator.
 Enter account holder’s name:
-You are currently logged in as acc_holder
-Bank Account Number: acc_num
-Balance: balance
-Transaction Payment Plan: plan
-Status: status
 Enter account number:
-Enter amount to deposit:
-Funds have been successfully added to your account
-New balance: new_balance
-You have successfully logged out of your account 
+Enter amount to deposit:
+Funds have been successfully added to the account 00001.
+New balance: $1020.00
+You have successfully logged out of the administrator account.
