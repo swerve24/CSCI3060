@@ -5,9 +5,8 @@ Account holder’s name:
 You are currently logged in as Luisa
 Bank Account Number: 00020
 Balance: $99999.99
-Transaction Payment Plan: non-student
-Status: active
+Transaction Payment Plan: Non-student
+Status: Active
 Enter account number:
-ERROR: Newly created accounts may not deposit funds.
-Please try again in 24 hours.
+ERROR: Newly created accounts may not deposit funds. Please try again in 24 hours.
 You have successfully logged out of your account.

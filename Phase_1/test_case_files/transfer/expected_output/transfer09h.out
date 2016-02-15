@@ -2,16 +2,16 @@ Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
 Enter account holder’s name:
-You are currently logged in as Tarzan
+You are currently logged in as Tarzan.
 Bank Account Number: 00001
-Balance: $1000.00
-Transaction Payment Plan: non-student
-Status: ative
+Balance: $01000.00
+Transaction Payment Plan: Non-student
+Status: Active
 Enter your account number:
 Enter the destination account number:
 Enter amount to transfer:
 Funds have been successfully transferred from account 00001 to account 00002.
-Newbalance: $980.00
+Newbalance: $0980.00
 Enter origin account holder’s name:
 Enter origin account number:
 Enter destination account number:

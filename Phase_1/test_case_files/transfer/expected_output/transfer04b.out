@@ -2,11 +2,11 @@ Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
 Account holder’s name:
-You are currently logged in as Steve
+You are currently logged in as Steve.
 Bank Account Number: 00015
-Balance: $1000.00
-Transaction Payment Plan: non-student
-Status: disabled
+Balance: $01000.00
+Transaction Payment Plan: Non-student
+Status: Disabled
 Enter origin account number:
 ERROR: Your account is disabled; you may not send funds.
 You have successfully logged out of your account.

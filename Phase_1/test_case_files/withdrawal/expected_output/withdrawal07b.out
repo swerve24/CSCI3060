@@ -2,11 +2,11 @@ Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
 Account holder’s name:
-You are currently logged in as Yoji
+You are currently logged in as Yoji.
 Bank Account Number: 00017
-Balance: $200.00
-Transaction Payment Plan: non-student
-Status: active
+Balance: $00200.00
+Transaction Payment Plan: Non-student
+Status: Active
 Enter account number:
 Enter amount to deposit:
 ERROR: The amount entered is not valid.

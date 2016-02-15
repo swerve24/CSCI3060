@@ -4,7 +4,5 @@ Mode in which you wish to login as:
 You are currently logged in as an administrator.
 Enter origin account holder’s name:
 Enter origin account number:
-Enter destination account number:
-ERROR: Newly created accounts may not receive funds.
-Please try again in 24 hours.
+ERROR: Newly created accounts may not receive funds. Please try again in 24 hours.
 You have successfully logged out of the administrator account.

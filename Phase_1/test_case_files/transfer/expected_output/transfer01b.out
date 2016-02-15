@@ -1,10 +1,10 @@
 Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
-Mode in which you wish to login as:
+Enter mode in which you wish to login as:
 You are currently logged in as an administrator
-Enter original account holder’s name:
+Enter origin account holder’s name:
 Enter the destination account number:
 Enter amount to transfer:
 Funds have been successfully transferred from account 00001 to account 00002.
-New balance: $980.00
+New balance: $0980.00
 You have successfully logged out of the administrator account.

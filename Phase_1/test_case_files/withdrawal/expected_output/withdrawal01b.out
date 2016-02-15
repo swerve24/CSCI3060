@@ -1,10 +1,10 @@
 Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
-You are currently logged in as an administrator
+You are currently logged in as an administrator.
 Enter account holder’s name:
 Enter account number:
 Enter amount to withdraw:
-Funds have been successfully withdrawn from your account 00001
-Newbalance: $980.00
+Funds have been successfully withdrawn from account 00001.
+Newbalance: $0980.00
 You have successfully logged out of the administrator account.
