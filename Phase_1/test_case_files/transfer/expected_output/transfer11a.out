@@ -1,10 +1,7 @@
 Welcome to Watermelon Banking System
-Please login to begin or type in ìhelpî for more information
+Please login to begin or type in ‚Äúhelp‚Äù for more information.
 Mode in which you wish to login as:
-You are currently logged in as an administrator
-Enter origin account holderís name:
-Enter origin account number:
-Enter destination account number:
-Enter amount to transfer:
-ERROR: The amount entered is not valid.
-You have successfully logged out of the administrator account
+You are currently logged in as an administrator.
+Enter original account holder‚Äôs name:
+ERROR: The account holder's name is not valid.
+You have successfully logged out of the administrator account.

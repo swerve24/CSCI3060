@@ -1,14 +1,11 @@
 Welcome to Watermelon Banking System
 Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
-Account holder’s name:
-You are currently logged in as Dave
-Bank Account Number: 00016
-Balance: $200.00
+You are currently logged in as Tarzan
+Bank Account Number: 00001
+Balance: $1000.00
 Transaction Payment Plan: non-student
 Status: active
-Enter your account number:
-Enter destination account number:
-Enter amount to transfer:
-ERROR: The amount entered is not valid.
+Enter account number:
+ERROR:The account number entered is not valid.
 You have successfully logged out of your account.

@@ -1,14 +1,13 @@
 Welcome to Watermelon Banking System
-Please login to begin or type in “help” for more information
+Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
 Account holder’s name:
-You are currently logged in as acc_holder
-Bank Account Number: acc_num
-Balance: balance
-Transaction Payment Plan: plan
-Status: status
-Enter account number:
-ERROR: Newly created accounts may not send funds.
-Please try again in 24 hours.
-You have successfully logged out of your account
-
+You are currently logged in as Bill
+Bank Account Number: 00014
+Balance: $1000.00
+Transaction Payment Plan: non-student
+Status: active
+Enter your account number:
+Enter destination account number:
+ERROR: The destination account is disabled; they may not receive funds.
+You have successfully logged out of your account.
