@@ -5,5 +5,5 @@ You are currently logged in as an administrator.
 Enter account holder’s name:
 Enter account number:
 Are you sure you want to delete acc_holder’s account acc_number(yes/no)?
-The deletion of account acc_number has been aborted.
+The deletion of account 00003 has been aborted.
 You have successfully logged out of the administrator account.
