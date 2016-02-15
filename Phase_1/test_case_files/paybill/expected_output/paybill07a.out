@@ -1,10 +1,14 @@
 Welcome to Watermelon Banking System
-Please login to begin or type in “help” for more information
+Please login to begin or type in “help” for more information.
 Mode in which you wish to login as:
-You are currently logged in as an administrator
-Enter account holder’sname:
-Enter origin account number:
-ERROR: Newly created accounts may not send funds.
-Please try again in 24 hours.
-You have successfully logged out of administrator account
-
+Enter account holder’s name:
+You are currently logged in as Tarzan
+Bank Account Number: 00001
+Balance: $1000.00
+Transaction Payment Plan: non-student
+Status: active
+Enter your account number:
+Enter company:
+Enter amount to pay:
+ERROR:The amount entered is not valid.
+You have successfully logged out of your account.

@@ -1,0 +1,16 @@
+Welcome to Watermelon Banking System
+Please login to begin or type in “help” for more information.
+Mode in which you wish to login as:
+You are currently logged in as an administrator.
+Enter account holder’s name:
+Enter the origin account number:
+Enter company:
+Enter amount to pay:
+You have successfully paid a bill of $1000.00 from account 00001 to company EC
+New balance: 
+Enter account holder’s name:
+Enter the origin account number:
+Enter company:
+Enter amount to pay:
+ERROR:The amount entered is not valid.
+You have successfully logged out of the administrator account.
