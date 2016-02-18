@@ -3,13 +3,19 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "User.h"
+#include "User.cpp"
 
 using namespace std;
 
 int main (int argc, char *argv[]) {
 
-	User u("Bob", "active", "non-student", 00001, 00500.00);
+	User u("Bob", "Active", "Non-student", 00001, 00500.00);
+
+	cout << u.getName() << endl;
+	cout << u.getStatus() << endl;
+	cout << u.getPlan() << endl;
+	cout << u.getAccNum() << endl;
+	cout << u.getBalance() << endl;
 
 	if (argc == 0) { // for command line inputs only
 

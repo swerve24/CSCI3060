@@ -10,15 +10,21 @@ using namespace std;
 #define USER_H
 
 class User {
-	public:
-		User();
-		User(string name, string status, string plan, int acc_num, float balance);
-
+	private:
 		string name;
 		string status;
 		string plan;
 		int acc_num;
 		float balance;
+
+	public:
+		User();
+		User(string name, string status, string plan, int acc_num, float balance);
+		string getName() {return name;}
+		string getStatus() {return status;}
+		string getPlan() {return plan;}
+		int getAccNum() {return acc_num;}
+		float getBalance() {return balance;}
 };
 
 #endif
