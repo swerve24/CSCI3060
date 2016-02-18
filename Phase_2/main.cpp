@@ -60,6 +60,7 @@ int main (int argc, char *argv[]) {
 
 		string command;
 		string mode;
+		string acc_name;
 		bool logged = false;
 
 		while(true) {
@@ -80,7 +81,33 @@ int main (int argc, char *argv[]) {
 
 					} else if (mode.compare("standard") == 0) {
 
+						string currName;
+						bool is_found = false;
+
 						cout << "Enter account holder's name: ";
+						cin >> currName;
+
+						User curr_user;
+
+						for (int i=0; i<users.size(); i++) {
+							if (users.at(i).getName().compare(currName) == 0) {
+								is_found = true;
+								curr_user = users.at(i);
+							}
+						}
+
+						if (is_found == true) {
+							logged = true;
+							acc_name = currName;
+							mode = "standard"; 
+							cout << "You are currently logged in as " << acc_name << "." << endl;
+							cout << "Bank Account Number: " << curr_user.getAccNum() << endl;
+							cout << "Balance: " << curr_user.getBalance() << endl;
+							cout << "Transaction Payment Plan: " << curr_user.getPlan() << endl;
+							cout << "Status: " << curr_user.getStatus() << endl;
+						} else {
+							cerr << "ERROR: This name is invalid." << endl;
+						}
 
 					} else {
 						cerr << "ERROR: Invalid account mode." << endl;
@@ -91,7 +118,15 @@ int main (int argc, char *argv[]) {
 				}
 			} else if (command.compare("logout") == 0) {
 				if (logged) {
+					if (mode.compare("admin") == 0) {
+						cout << "You have successfully logged out of the administrator account." << endl;
+					} else {
+						cout << "You have successfully logged out of your account." << endl;
+					}
+
 					logged = false;
+					mode = "";
+					acc_name = "";
 				} else {
 					cerr << "ERROR: You are not currently logged into an account." << endl;
 				}
