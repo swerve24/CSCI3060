@@ -3,9 +3,36 @@
 #include <iostream>
 #include <fstream>
 #include <string.h>
+#include <vector>
 #include "User.cpp"
 
 using namespace std;
+
+vector<User> users;
+
+void getAccounts() {
+
+	ifstream infile("current_bank_accounts_file.txt");
+
+	string name;
+	string status;
+	string plan;
+	int acc_num;
+	float balance;
+
+	while (!infile.eof()) {
+
+		string line;
+
+		infile >> acc_num >> name >> status >> balance >> plan;
+		User u(name, status, plan, acc_num, balance);
+		users.push_back(u);
+
+		getline(infile, line);
+	}
+
+	infile.close();
+}
 
 void printWelcomeMessage() {
 	cout << "Welcome to Watermelon Banking System" << endl;
@@ -13,13 +40,20 @@ void printWelcomeMessage() {
 }
 
 void printHelp() {
-	cout << "HELP ME PLS." << endl;
+
+	ifstream infile("help.txt");
+	string line;
+
+	while ( getline (infile,line) ) {
+		cout << line << endl;
+	}
+
+	infile.close();
 }
 
 int main (int argc, char *argv[]) {
 
-
-
+	getAccounts();
 	printWelcomeMessage();
 
 	if (argc == 1) { // for command line inputs only
@@ -42,7 +76,7 @@ int main (int argc, char *argv[]) {
 					if (mode.compare("admin") == 0) {
 						mode = "admin";
 						logged = true;
-						cout << endl << "You are currently logged in as an administrator." << endl;
+						cout << "You are currently logged in as an administrator." << endl;
 
 					} else if (mode.compare("standard") == 0) {
 
