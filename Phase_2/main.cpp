@@ -10,7 +10,17 @@ using namespace std;
 
 vector<User> users;
 
-void getAccounts() {
+// To compare user input - should accept variations
+// (e.g. "Standard", "standard", "STANDARD", etc)
+string toLower(string &str) {
+
+	for (int i = 0; i < str.length(); i++) {
+		str[i] = tolower(str[i]);
+	}
+	return str;
+}
+
+void loadAccounts() {
 
 	string file_name = "current_bank_accounts_file.txt";
 
@@ -39,7 +49,17 @@ void getAccounts() {
 }
 
 void printWelcomeMessage() {
-	cout << "Welcome to Watermelon Banking System" << endl;
+
+/*	
+	cout << " _    _  ___ _____ ______________  ________ _     _____ _   _ " << endl;
+	cout << "| |  | |/ _ |_   _|  ___| ___ |  \\/  |  ___| |   |  _  | \\ | |" << endl;
+	cout << "| |  | / /_\\ \\| | | |__ | |_/ | .  . | |__ | |   | | | |  \\| |" << endl;
+	cout << "| |/\\| |  _  || | |  __||    /| |\\/| |  __|| |   | | | | . ` |" << endl;
+	cout << "\\  /\\  | | | || | | |___| |\\ \\| |  | | |___| |___\\ \\_/ | |\\  |" << endl;
+ 	cout << " \\/  \\/\\_| |_/\\_/ \\____/\\_| \\_\\_|  |_\\____/\\_____/\\___/\\_| \\_/" << endl << endl;
+*/
+                                                              
+    cout << "Welcome to Watermelon Banking System" << endl;
 	cout << "Please log in to begin or type in \"help\" for more information." << endl;
 }
 
@@ -63,7 +83,7 @@ void printHelp() {
 
 int main (int argc, char *argv[]) {
 
-	getAccounts();
+	loadAccounts();
 	printWelcomeMessage();
 
 	if (argc == 1) { // for command line inputs only
@@ -71,44 +91,44 @@ int main (int argc, char *argv[]) {
 		string command;
 		string mode;
 		string acc_name;
-		bool logged = false;
+		bool is_logged = false;
 
 		while(true) {
 
 			//cout << "Enter a command." << endl;
-			cin >> command;
+			getline(cin, command);
 
-			if (command.compare("login") == 0) {
-				if (!logged) {
+			if (toLower(command).compare("login") == 0) {
+				if (!is_logged) {
 
 					cout << "Enter mode in which you wish to log in as: ";
-					cin >> mode;
+					getline(cin, mode);
 
-					if (mode.compare("admin") == 0) {
+					if (toLower(mode).compare("admin") == 0) {
 						mode = "admin";
-						logged = true;
+						is_logged = true;
 						cout << "You are currently logged in as an administrator." << endl;
 
-					} else if (mode.compare("standard") == 0) {
+					} else if (toLower(mode).compare("standard") == 0) {
 
-						string currName;
+						string curr_name;
 						bool is_found = false;
 
 						cout << "Enter account holder's name: ";
-						cin >> currName;
+						getline(cin, curr_name);
 
 						User curr_user;
 
-						for (int i=0; i<users.size(); i++) {
-							if (users.at(i).getName().compare(currName) == 0) {
+						for (int i = 0; i < users.size(); i++) {
+							if (users.at(i).getName().compare(curr_name) == 0) {
 								is_found = true;
 								curr_user = users.at(i);
 							}
 						}
 
 						if (is_found == true) {
-							logged = true;
-							acc_name = currName;
+							is_logged = true;
+							acc_name = curr_name;
 							mode = "standard"; 
 							cout << "You are currently logged in as " << acc_name << "." << endl;
 							cout << "Bank Account Number: " << curr_user.getAccNum() << endl;
@@ -126,78 +146,78 @@ int main (int argc, char *argv[]) {
 				} else {
 					cerr << "ERROR: There is a session running. Please log out and try again." << endl;
 				}
-			} else if (command.compare("logout") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("logout") == 0) {
+				if (is_logged) {
 					if (mode.compare("admin") == 0) {
 						cout << "You have successfully logged out of the administrator account." << endl;
 					} else {
 						cout << "You have successfully logged out of your account." << endl;
 					}
 
-					logged = false;
+					is_logged = false;
 					mode = "";
 					acc_name = "";
 				} else {
 					cerr << "ERROR: You are not currently logged into an account." << endl;
 				}
-			} else if (command.compare("create") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("create") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("delete") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("delete") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("disable") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("disable") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("enable") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("enable") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("deposit") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("deposit") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("withdrawal") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("withdrawal") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("transfer") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("transfer") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("paybill") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("paybill") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("changeplan") == 0) {
-				if (logged) {
+			} else if (toLower(command).compare("changeplan") == 0) {
+				if (is_logged) {
 
 				} else {
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 				}
-			} else if (command.compare("help") == 0) {
+			} else if (toLower(command).compare("help") == 0) {
 				printHelp();
-			} else if (command.compare("quit") == 0) {
-				if (!logged) {
+			} else if (toLower(command).compare("quit") == 0) {
+				if (!is_logged) {
 					return 1;
 				} else {
 					cerr << "ERROR: You may not quit while logged in." << endl;
