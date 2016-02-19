@@ -4,7 +4,9 @@
 #include <fstream>
 #include <string.h>
 #include <vector>
-#include "User.cpp"
+#include "User.h"
+#include "Login.h"
+#include "Logout.h"
 
 using namespace std;
 
@@ -24,7 +26,7 @@ void loadAccounts() {
 
 	string file_name = "current_bank_accounts_file.txt";
 
-	ifstream infile(file_name);
+	ifstream infile(file_name.c_str());
 
 	string name, status, plan;
 	int acc_num;
@@ -68,7 +70,7 @@ void printHelp() {
 	string file_name = "help.txt";
 	string line;
 
-	ifstream infile(file_name);
+	ifstream infile(file_name.c_str());
 
 	if (infile) {
 		while (getline (infile,line)) {
@@ -95,71 +97,14 @@ int main (int argc, char *argv[]) {
 
 		while(true) {
 
-			//cout << "Enter a command." << endl;
 			getline(cin, command);
 
 			if (toLower(command).compare("login") == 0) {
-				if (!is_logged) {
-
-					cout << "Enter mode in which you wish to log in as: ";
-					getline(cin, mode);
-
-					if (toLower(mode).compare("admin") == 0) {
-						mode = "admin";
-						is_logged = true;
-						cout << "You are currently logged in as an administrator." << endl;
-
-					} else if (toLower(mode).compare("standard") == 0) {
-
-						string curr_name;
-						bool is_found = false;
-
-						cout << "Enter account holder's name: ";
-						getline(cin, curr_name);
-
-						User curr_user;
-
-						for (int i = 0; i < users.size(); i++) {
-							if (users.at(i).getName().compare(curr_name) == 0) {
-								is_found = true;
-								curr_user = users.at(i);
-							}
-						}
-
-						if (is_found == true) {
-							is_logged = true;
-							acc_name = curr_name;
-							mode = "standard"; 
-							cout << "You are currently logged in as " << acc_name << "." << endl;
-							cout << "Bank Account Number: " << curr_user.getAccNum() << endl;
-							cout << "Balance: " << curr_user.getBalance() << endl;
-							cout << "Transaction Payment Plan: " << curr_user.getPlan() << endl;
-							cout << "Status: " << curr_user.getStatus() << endl;
-						} else {
-							cerr << "ERROR: This name is invalid." << endl;
-						}
-
-					} else {
-						cerr << "ERROR: Invalid account mode." << endl;
-					}
-
-				} else {
-					cerr << "ERROR: There is a session running. Please log out and try again." << endl;
-				}
+				Login login;
+				login.login(is_logged, acc_name, mode, users);
 			} else if (toLower(command).compare("logout") == 0) {
-				if (is_logged) {
-					if (mode.compare("admin") == 0) {
-						cout << "You have successfully logged out of the administrator account." << endl;
-					} else {
-						cout << "You have successfully logged out of your account." << endl;
-					}
-
-					is_logged = false;
-					mode = "";
-					acc_name = "";
-				} else {
-					cerr << "ERROR: You are not currently logged into an account." << endl;
-				}
+				Logout logout;
+				logout.logout(is_logged, mode, acc_name);
 			} else if (toLower(command).compare("create") == 0) {
 				if (is_logged) {
 

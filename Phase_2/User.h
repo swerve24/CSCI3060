@@ -1,3 +1,5 @@
+#ifndef USER_H
+#define USER_H
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
@@ -5,9 +7,6 @@
 #include <string>
 
 using namespace std;
-
-#ifndef USER_H
-#define USER_H
 
 class User {
 	private:

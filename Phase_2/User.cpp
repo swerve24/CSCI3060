@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <iostream>
-#include <fstream>
-#include <string>
 #include "User.h"
-
-using namespace std;
 
 User::User() {
 
