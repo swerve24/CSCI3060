@@ -12,26 +12,30 @@ vector<User> users;
 
 void getAccounts() {
 
-	ifstream infile("current_bank_accounts_file.txt");
+	string file_name = "current_bank_accounts_file.txt";
 
-	string name;
-	string status;
-	string plan;
+	ifstream infile(file_name);
+
+	string name, status, plan;
 	int acc_num;
 	float balance;
 
-	while (!infile.eof()) {
+	if (infile) {
+		while (!infile.eof()) {
 
-		string line;
+			string line;
 
-		infile >> acc_num >> name >> status >> balance >> plan;
-		User u(name, status, plan, acc_num, balance);
-		users.push_back(u);
+			infile >> acc_num >> name >> status >> balance >> plan;
+			User u(name, status, plan, acc_num, balance);
+			users.push_back(u);
 
-		getline(infile, line);
+			getline(infile, line);
+		}
+		infile.close();
+	} else {
+		cerr << "ERROR: File \"" << file_name << "\" was not found." << endl;
+		exit(-1);
 	}
-
-	infile.close();
 }
 
 void printWelcomeMessage() {
@@ -41,14 +45,20 @@ void printWelcomeMessage() {
 
 void printHelp() {
 
-	ifstream infile("help.txt");
+	string file_name = "help.txt";
 	string line;
 
-	while ( getline (infile,line) ) {
-		cout << line << endl;
-	}
+	ifstream infile(file_name);
 
-	infile.close();
+	if (infile) {
+		while (getline (infile,line)) {
+			cout << line << endl;
+		}
+		infile.close();
+	} else {
+		cerr << "ERROR: File \"" << file_name << "\" was not found." << endl;
+		exit(-1);
+	}
 }
 
 int main (int argc, char *argv[]) {
@@ -65,7 +75,7 @@ int main (int argc, char *argv[]) {
 
 		while(true) {
 
-			cout << "Enter a command." << endl;
+			//cout << "Enter a command." << endl;
 			cin >> command;
 
 			if (command.compare("login") == 0) {
