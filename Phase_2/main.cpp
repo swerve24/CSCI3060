@@ -53,7 +53,8 @@ void login(bool& is_logged, string& acc_name, string& mode) {
 	if (!is_logged) {
 
 		cout << "Enter mode in which you wish to log in as: ";
-		getline(cin, mode);
+		//getline(cin, mode);
+		cin >> mode;
 
 		if (toLower(mode).compare("admin") == 0) {
 			mode = "admin";
@@ -66,6 +67,7 @@ void login(bool& is_logged, string& acc_name, string& mode) {
 			bool is_found = false;
 
 			cout << "Enter account holder's name: ";
+			cin.ignore();
 			getline(cin, curr_name);
 
 			User curr_user;
@@ -115,11 +117,13 @@ void logout(bool& is_logged, string& mode, string& acc_name) {
 	}
 }
 
-void create(bool& is_logged, string& mode) {
+void create(bool is_logged, string& mode) {
+
 	if (is_logged) {
 
 		string new_name;
 		string result;
+
 		bool existing = false;
 
 		/*try {
@@ -134,15 +138,18 @@ void create(bool& is_logged, string& mode) {
 		  // Syntax error in the regular expression
 		}*/
 
-		if (toLower(mode).compare("admin") == 0) {
+		if (mode.compare("admin") == 0) {
 			cout << "Enter new account holder's name: ";
-			cin >> new_name;
+			//cin >> new_name;
+			cin.ignore();
+			getline(cin, new_name);
 
 			if (new_name.length() > 20) {
 				new_name = new_name.substr(0, 20);
+				cout << "Your account holder name has been truncated to: " << new_name << endl;
 			}
 
-			for (int i=0; i<users.size(); i++) {
+			for (int i = 0; i < users.size(); i++) {
 				if (users.at(i).getName().compare(new_name) == 0) {
 					existing = true;
 				}
@@ -208,7 +215,8 @@ int main (int argc, char *argv[]) {
 
 		while(true) {
 
-			getline(cin, command);
+			//getline(cin, command);
+			cin >> command;
 
 			if (toLower(command).compare("login") == 0) {
 				login(is_logged, acc_name, mode);
