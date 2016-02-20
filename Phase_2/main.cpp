@@ -10,6 +10,9 @@
 using namespace std;
 
 vector<User> users;
+string mode;
+string acc_name;
+bool is_logged;
 
 // To compare user input - should accept variations
 // (e.g. "Standard", "standard", "STANDARD", etc)
@@ -49,7 +52,7 @@ void loadAccounts() {
 	}
 }
 
-void login(bool& is_logged, string& acc_name, string& mode) {
+void login() {
 	if (!is_logged) {
 
 		cout << "Enter mode in which you wish to log in as: ";
@@ -101,7 +104,7 @@ void login(bool& is_logged, string& acc_name, string& mode) {
 	}
 }
 
-void logout(bool& is_logged, string& mode, string& acc_name) {
+void logout() {
 	if (is_logged) {
 		if (toLower(mode).compare("admin") == 0) {
 			cout << "You have successfully logged out of the administrator account." << endl;
@@ -117,7 +120,7 @@ void logout(bool& is_logged, string& mode, string& acc_name) {
 	}
 }
 
-void create(bool is_logged, string& mode) {
+void create() {
 
 	if (is_logged) {
 
@@ -125,18 +128,6 @@ void create(bool is_logged, string& mode) {
 		string result;
 
 		bool existing = false;
-
-		/*try {
-		  	regex re("Name: (.*)");
-		  	smatch match;
-		  	if (regex_search(new_name, match, re) && match.size() > 1) {
-		    	result = match.str(1);
-		  	} else {
-				result = string("");
-		 	} 
-		} catch (regex_error& e) {
-		  // Syntax error in the regular expression
-		}*/
 
 		if (mode.compare("admin") == 0) {
 			cout << "Enter new account holder's name: ";
@@ -156,13 +147,89 @@ void create(bool is_logged, string& mode) {
 			}
 
 			if (existing == false) {
-				cout << new_name << endl;
+
+				try {
+				  	regex re("[a-zA-Z0-9 -]+");
+
+				  	if (regex_match(new_name, re)) {
+			 			cout << "integer" << endl;
+			 		} else {
+			 			cout << "Invalid input" << endl;
+			 		}
+				} catch (regex_error& e) {
+				  cerr << "ERROR: Invalid regular expression." << endl;
+				}
+
 			} else {
 				cerr << "ERROR: This account name is already in use. Please pick a different one." << endl;
 			}
 		} else {
 			cerr << "ERROR: You need to be an administrator to create a new account." << endl;
 		}
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void deleted() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void disable() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void enable() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void deposit() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void withdrawal() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void transfer() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void paybill() {
+	if (is_logged) {
+
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
+void changeplan() {
+	if (is_logged) {
+
 	} else {
 		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 	}
@@ -209,9 +276,7 @@ int main (int argc, char *argv[]) {
 	if (argc == 1) { // for command line inputs only
 
 		string command;
-		string mode;
-		string acc_name;
-		bool is_logged = false;
+		is_logged = false;
 
 		while(true) {
 
@@ -219,59 +284,27 @@ int main (int argc, char *argv[]) {
 			cin >> command;
 
 			if (toLower(command).compare("login") == 0) {
-				login(is_logged, acc_name, mode);
+				login();
 			} else if (toLower(command).compare("logout") == 0) {
-				logout(is_logged, mode, acc_name);
+				logout();
 			} else if (toLower(command).compare("create") == 0) {
-				create(is_logged, mode);
+				create();
 			} else if (toLower(command).compare("delete") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				deleted();
 			} else if (toLower(command).compare("disable") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				disable();
 			} else if (toLower(command).compare("enable") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				enable();
 			} else if (toLower(command).compare("deposit") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				deposit();
 			} else if (toLower(command).compare("withdrawal") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				withdrawal();
 			} else if (toLower(command).compare("transfer") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				transfer();
 			} else if (toLower(command).compare("paybill") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				paybill();
 			} else if (toLower(command).compare("changeplan") == 0) {
-				if (is_logged) {
-
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				changeplan();
 			} else if (toLower(command).compare("help") == 0) {
 				printHelp();
 			} else if (toLower(command).compare("quit") == 0) {
