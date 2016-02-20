@@ -283,31 +283,31 @@ int main (int argc, char *argv[]) {
 			//getline(cin, command);
 			cin >> command;
 
-			if (toLower(command).compare("login") == 0) {
+			if (toLower(command).compare("login") == 0)
 				login();
-			} else if (toLower(command).compare("logout") == 0) {
+			else if (toLower(command).compare("logout") == 0)
 				logout();
-			} else if (toLower(command).compare("create") == 0) {
+			else if (toLower(command).compare("create") == 0)
 				create();
-			} else if (toLower(command).compare("delete") == 0) {
+			else if (toLower(command).compare("delete") == 0)
 				deleted();
-			} else if (toLower(command).compare("disable") == 0) {
+			else if (toLower(command).compare("disable") == 0)
 				disable();
-			} else if (toLower(command).compare("enable") == 0) {
+			else if (toLower(command).compare("enable") == 0)
 				enable();
-			} else if (toLower(command).compare("deposit") == 0) {
+			else if (toLower(command).compare("deposit") == 0)
 				deposit();
-			} else if (toLower(command).compare("withdrawal") == 0) {
+			else if (toLower(command).compare("withdrawal") == 0)
 				withdrawal();
-			} else if (toLower(command).compare("transfer") == 0) {
+			else if (toLower(command).compare("transfer") == 0)
 				transfer();
-			} else if (toLower(command).compare("paybill") == 0) {
+			else if (toLower(command).compare("paybill") == 0)
 				paybill();
-			} else if (toLower(command).compare("changeplan") == 0) {
+			else if (toLower(command).compare("changeplan") == 0)
 				changeplan();
-			} else if (toLower(command).compare("help") == 0) {
+			else if (toLower(command).compare("help") == 0)
 				printHelp();
-			} else if (toLower(command).compare("quit") == 0) {
+			else if (toLower(command).compare("quit") == 0) {
 				if (!is_logged) {
 					return 1;
 				} else {
