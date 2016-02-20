@@ -4,6 +4,7 @@
 #include <fstream>
 #include <string.h>
 #include <vector>
+#include <regex>
 #include "User.h"
 
 using namespace std;
@@ -24,7 +25,7 @@ void loadAccounts() {
 
 	string file_name = "current_bank_accounts_file.txt";
 
-	ifstream infile(file_name.c_str());
+	ifstream infile(file_name);
 
 	string name, status, plan;
 	int acc_num;
@@ -48,7 +49,7 @@ void loadAccounts() {
 	}
 }
 
-void login(bool& is_logged, string& acc_name, string& mode, vector<User> users) {
+void login(bool& is_logged, string& acc_name, string& mode) {
 	if (!is_logged) {
 
 		cout << "Enter mode in which you wish to log in as: ";
@@ -114,6 +115,52 @@ void logout(bool& is_logged, string& mode, string& acc_name) {
 	}
 }
 
+void create(bool& is_logged, string& mode) {
+	if (is_logged) {
+
+		string new_name;
+		string result;
+		bool existing = false;
+
+		/*try {
+		  	regex re("Name: (.*)");
+		  	smatch match;
+		  	if (regex_search(new_name, match, re) && match.size() > 1) {
+		    	result = match.str(1);
+		  	} else {
+				result = string("");
+		 	} 
+		} catch (regex_error& e) {
+		  // Syntax error in the regular expression
+		}*/
+
+		if (toLower(mode).compare("admin") == 0) {
+			cout << "Enter new account holder's name: ";
+			cin >> new_name;
+
+			if (new_name.length() > 20) {
+				new_name = new_name.substr(0, 20);
+			}
+
+			for (int i=0; i<users.size(); i++) {
+				if (users.at(i).getName().compare(new_name) == 0) {
+					existing = true;
+				}
+			}
+
+			if (existing == false) {
+				cout << new_name << endl;
+			} else {
+				cerr << "ERROR: This account name is already in use. Please pick a different one." << endl;
+			}
+		} else {
+			cerr << "ERROR: You need to be an administrator to create a new account." << endl;
+		}
+	} else {
+		cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
+	}
+}
+
 void printWelcomeMessage() {
 
 /*	
@@ -134,7 +181,7 @@ void printHelp() {
 	string file_name = "help.txt";
 	string line;
 
-	ifstream infile(file_name.c_str());
+	ifstream infile(file_name);
 
 	if (infile) {
 		while (getline (infile,line)) {
@@ -164,19 +211,11 @@ int main (int argc, char *argv[]) {
 			getline(cin, command);
 
 			if (toLower(command).compare("login") == 0) {
-				login(is_logged, acc_name, mode, users);
+				login(is_logged, acc_name, mode);
 			} else if (toLower(command).compare("logout") == 0) {
 				logout(is_logged, mode, acc_name);
 			} else if (toLower(command).compare("create") == 0) {
-				if (is_logged) {
-					if (toLower(mode).compare("admin") == 0) {
-						
-					} else {
-						cerr << "ERROR: " << endl;
-					}
-				} else {
-					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
-				}
+				create(is_logged, mode);
 			} else if (toLower(command).compare("delete") == 0) {
 				if (is_logged) {
 
