@@ -256,7 +256,6 @@ void printWelcomeMessage() {
 void login() {
 	
 	string acc_holder;
-	bool is_found;
 	mode = "standard"; 
 
 	// Save the account holder's name
@@ -303,7 +302,7 @@ void login() {
 
 // Logs user out from either account - administrator or standard
 void logout() {
-	
+
 	if (is_logged) {
 		if (mode.compare("admin") == 0) {
 			cout << "You have successfully logged out of the administrator account." << endl;

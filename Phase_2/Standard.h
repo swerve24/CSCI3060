@@ -34,6 +34,10 @@ class Standard: public virtual IAccount {
 		void setPlan(char plan) {acc_plan = plan;}
 
 	//	void login(string acc_holder);
+		void withdrawal(int acc_num, float amount);
+		void transfer(int acc_num_f, int acc_num_t, float amount);
+		void paybill(int acc_num, string company, float amount);
+		void deposit(int acc_num, float amount);
 		bool logout();
 };
 #endif
