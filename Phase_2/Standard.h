@@ -4,8 +4,12 @@
 #include <stdlib.h>
 #include <iostream>
 #include <fstream>
-#include <string>
+#include <string.h>
+#include <vector>
+#include <regex>
 #include "IAccount.h"
+//#include "Administrator.h"
+#include "TransactionHelper.h"
 
 using namespace std;
 
@@ -38,6 +42,6 @@ class Standard: public virtual IAccount {
 		void transfer(int acc_num_f, int acc_num_t, float amount);
 		void paybill(int acc_num, string company, float amount);
 		void deposit(int acc_num, float amount);
-		bool logout();
+	//	bool logout();
 };
 #endif

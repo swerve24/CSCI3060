@@ -6,8 +6,9 @@
 #include <fstream>
 #include <string>
 #include "IAccount.h"
-#include <vector>
 #include "User.h"
+#include "Standard.h"
+#include "TransactionHelper.h"
 
 using namespace std;
 
@@ -27,6 +28,7 @@ class Administrator: public virtual IAccount {
 		void transfer(int acc_num_f, int acc_num_t, float amount);
 		void paybill(int acc_num, string company, float amount);
 		void deposit(int acc_num, float amount);
-		bool logout();
+	//	bool logout();
 };
+
 #endif

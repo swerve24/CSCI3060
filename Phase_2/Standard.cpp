@@ -12,10 +12,22 @@ Standard::Standard(int acc_num, float acc_balance, char acc_status, char acc_pla
 
 }*/
 
-void Standard::withdrawal(int acc_num, float amount) {}
-void Standard::transfer(int acc_num_f, int acc_num_t, float amount) {}
-void Standard::paybill(int acc_num, string company, float amount) {}
-void Standard::deposit(int acc_num, float amount) {}
+void Standard::withdrawal(int acc_num, float amount) {
+	cout << "Withdrawing $" << amount << " from your account - Standard class" << endl;
+}
+
+void Standard::transfer(int acc_num_f, int acc_num_t, float amount) {
+	cout << "Transfering $" << amount << " from your account to account " << acc_num_t << " - Standard class" << endl;
+}
+
+void Standard::paybill(int acc_num, string company, float amount) {
+	cout << "Paying a bill of $" << amount << " to " << company << " - Standard class" << endl;
+}
+
+void Standard::deposit(int acc_num, float amount) {
+	cout << "Depositing $" << amount << " into your account - Standard class" << endl;
+}
+
 /*
 bool Standard::logout(){
 	cout << "From Standard class" << endl;

@@ -1,5 +1,4 @@
 #include "Administrator.h"
-#include "main.h"
 
 void Administrator::withdrawal(int acc_num, float amount) {}
 void Administrator::transfer(int acc_num_f, int acc_num_t, float amount) {}
@@ -31,16 +30,29 @@ void Administrator::create(vector<User>& users) {
 	/* If the name does not exist (e.g. is unique) then 
 	 * check if it fits the format required
 	 */
-	if (!holderExists(new_name) && new_name.compare("admin") != 0
-		&& isNameValid(new_name)) {
+	if (!transactions.holderExists(new_name) && new_name.compare("admin") != 0
+		&& transactions.isNameValid(new_name)) {
 		// Assign new account number here using
 		// Then create new User and add it to the users vector
+		cout << "Assigning new account a bank account number." << endl;
 	} else {
 		cerr << "ERROR: This account name is already in use. Please pick a different one." << endl;
 	}
 }
 
-void Administrator::deleted(int acc_num) {}
-void Administrator::disable(int acc_num) {}
-void Administrator::enable(int acc_num) {}
-void Administrator::changeplan(int acc_num) {}
+void Administrator::deleted(int acc_num) {
+	cout << "Deleting account " << acc_num <<  " - Administrator class" << endl;
+}
+
+void Administrator::disable(int acc_num) {
+	cout << "Disabling account " << acc_num << " - Administrator class" << endl;
+}
+
+void Administrator::enable(int acc_num) {
+	cout << "Enabling account " << acc_num << " - Administrator class" << endl;
+}
+
+void Administrator::changeplan(int acc_num) {
+	string plan = "Student";
+	cout << "Changing the transaction payment plan of account " << acc_num << " to " << plan << " - Administrator class" << endl;
+}
