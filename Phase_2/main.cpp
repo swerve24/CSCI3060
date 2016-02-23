@@ -234,11 +234,6 @@ int main (int argc, char *argv[]) {
         cerr << "ERROR: Invalid command." << endl;
       }
     }
-  /* argc should be 1 element for a correct execution 
-   * with text file inputs
-   */
-  } else  if (argc == 2) {
-	
   } else {
      cerr << "ERROR: Too many arguments." << endl;
      return -1;
