@@ -16,10 +16,10 @@ using namespace std;
 class Standard: public virtual IAccount {
 
 	private:
-		int acc_num;
-		float acc_balance;
-		char acc_status;
-		char acc_plan;
+		int acc_num_;
+		float acc_balance_;
+		char acc_status_;
+		char acc_plan_;
 
 	public:
 
@@ -27,21 +27,21 @@ class Standard: public virtual IAccount {
 	//	Standard(int acc_num, float acc_balance, char acc_status, char acc_plan);
 		~Standard() {} // MAYBE THIS COULD BE PART OF THE DELETE FUNCTION - SAME JOB
 		
-		int getNum() {return acc_num;}
-		float getBalance() {return acc_balance;}
-		char getStatus() {return acc_status;}
-		char getPlan() {return acc_plan;}
+		int GetNum() {return acc_num_;}
+		float GetBalance() {return acc_balance_;}
+		char GetStatus() {return acc_status_;}
+		char GetPlan() {return acc_plan_;}
 
-		void setNum(int num) {acc_num = num;}
-		void setBalance(float balance) {acc_balance = balance;}
-		void setStatus(char status) {acc_status = status;}
-		void setPlan(char plan) {acc_plan = plan;}
+		void SetNum(int num) {acc_num_ = num;}
+		void SetBalance(float balance) {acc_balance_ = balance;}
+		void SetStatus(char status) {acc_status_ = status;}
+		void SetPlan(char plan) {acc_plan_ = plan;}
 
 	//	void login(string acc_holder);
-		void withdrawal(int acc_num, float amount);
-		void transfer(int acc_num_f, int acc_num_t, float amount);
-		void paybill(int acc_num, string company, float amount);
-		void deposit(int acc_num, float amount);
+		void Withdrawal(int acc_num_, float amount);
+		void Transfer(int acc_num_f, int acc_num_t, float amount);
+		void Paybill(int acc_num_, string company, float amount);
+		void Deposit(int acc_num_, float amount);
 	//	bool logout();
 };
 #endif

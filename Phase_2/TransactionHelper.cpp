@@ -4,7 +4,7 @@
 /* To compare user input - should accept variations
  * (e.g. "Standard", "standard", "STANDARD", etc)
  */
-string TransactionHelper::toLower(string str) {
+string TransactionHelper::to_Lower(string str) {
 
 	for (int i = 0; i < str.length(); i++) {
 		str[i] = tolower(str[i]);
@@ -13,19 +13,19 @@ string TransactionHelper::toLower(string str) {
 }
 
 // Check if the curret user is an administrator
-bool TransactionHelper::isAdmin() {
+bool TransactionHelper::is_Admin() {
 	if (mode.compare("admin") == 0)
 		return true;
 	return false;
 }
 
 // Check if the account holder name inputed exists in the "database"
-bool TransactionHelper::holderExists(string name) {
+bool TransactionHelper::HolderExists(string name) {
 
 	bool ret = false;
 
 	for (int i = 0; i < users.size(); i++) {
-		if (users.at(i).getName().compare(name) == 0) {			
+		if (users.at(i).GetName().compare(name) == 0) {			
 			ret = true;
 			break;
 		}
@@ -37,7 +37,7 @@ bool TransactionHelper::holderExists(string name) {
 /* Check that the new account holder name entered follows the
  * required constraints. Done using regex.
  */
-bool TransactionHelper::isNameValid(string name) {
+bool TransactionHelper::is_Name_Valid(string name) {
 	
 	regex re("[a-zA-Z0-9 -]+");
 
@@ -48,38 +48,38 @@ bool TransactionHelper::isNameValid(string name) {
 }
 
 // Checks that both arguments correspond to eachother
-bool TransactionHelper::matches(string name, int acc_num) {
+bool TransactionHelper::Matches(string name, int acc_num) {
 	return true;
 }
 
 /* Checks that the amound of funds entered is valid
  * (e.g. formatting). Done using regex.
  */
-bool TransactionHelper::isAmountValid(float amount) {
+bool TransactionHelper::is_Amount_Valid(float amount) {
 	return true;
 }
 
 // Checks if the account provided is active or disabled
-bool TransactionHelper::isDisabled(int acc_num) {
+bool TransactionHelper::is_Disabled(int acc_num) {
 	return true;
 }
 
 /* Checks if the user's transaction payment plan
  * (student or non-student)
  */
-bool TransactionHelper::isStudent(int acc_num) {
+bool TransactionHelper::is_Student(int acc_num) {
 	return true;
 }
 
 // Outputs the transaction_file vector into a file
-void TransactionHelper::writeTransferFile() {
+void TransactionHelper::WriteTransferFile() {
 
 }
 
 /* Loads all accounts' information from the
  * current_bank_accounts_file.txt file (provided by the back end)
  */
-void TransactionHelper::loadAccounts() {
+void TransactionHelper::LoadAccounts() {
 
 	string file_name = "current_bank_accounts_file.txt";
 
@@ -98,11 +98,11 @@ void TransactionHelper::loadAccounts() {
 			infile >> acc_num >> acc_holder >> acc_status >> acc_balance >> acc_plan;
 			User u;
 		//	User u(acc_holder, acc_num, acc_balance, acc_status, acc_plan);
-			u.setName(acc_holder);
-			u.setNum(acc_num);
-			u.setBalance(acc_balance);
-			u.setStatus(acc_status);
-			u.setPlan(acc_plan);
+			u.SetName(acc_holder);
+			u.SetNum(acc_num);
+			u.SetBalance(acc_balance);
+			u.SetStatus(acc_status);
+			u.SetPlan(acc_plan);
 			users.push_back(u);
 
 			getline(infile, line);
@@ -114,14 +114,14 @@ void TransactionHelper::loadAccounts() {
 	}
 }
 
-void TransactionHelper::printWelcomeMessage() {
+void TransactionHelper::PrintWelcomeMessage() {
                                                               
     cout << "Welcome to Watermelon Banking System" << endl;
 	cout << "Please log in to begin or type in \"help\" for more information." << endl;
 }
 
 // Allows the users to log in as a STANDARD user
-void TransactionHelper::login() {
+void TransactionHelper::Login() {
 	
 	string acc_holder;
 	mode = "standard"; 
@@ -135,29 +135,29 @@ void TransactionHelper::login() {
 	 * update the curr_user User object with the new curr_user
 	 * information for future transactions
 	 */
-	if (holderExists(acc_holder) && acc_holder != "END_OF_FILE") {
+	if (HolderExists(acc_holder) && acc_holder != "END_OF_FILE") {
 
 		is_logged = true;
 
 		for (int i = 0; i < users.size(); i++)
-			if (users.at(i).getName().compare(acc_holder) == 0) {
+			if (users.at(i).GetName().compare(acc_holder) == 0) {
 				curr_user = users.at(i);
 			}
 
 		// Output the accounts' information in a user-friendly/readable way
-		cout << "You are currently logged in as " << curr_user.getName() << "." << endl;
-		cout << "Bank Account Number: " << curr_user.getNum() << endl;
-		cout << "Balance: " << curr_user.getBalance() << endl;
-		if (curr_user.getPlan() == 'S')
+		cout << "You are currently logged in as " << curr_user.GetName() << "." << endl;
+		cout << "Bank Account Number: " << curr_user.GetNum() << endl;
+		cout << "Balance: " << curr_user.GetBalance() << endl;
+		if (curr_user.GetPlan() == 'S')
 			cout << "Transaction Payment Plan: Student" << endl;
-		else if (curr_user.getPlan() == 'N')
+		else if (curr_user.GetPlan() == 'N')
 			cout << "Transaction Payment Plan: Non-student" << endl;
 		else 
 			cerr << "ERROR: Could not get payment plan information." << endl;			
 		
-		if (curr_user.getStatus() == 'D')
+		if (curr_user.GetStatus() == 'D')
 			cout << "Status: Disabled" << endl;
-		else if (curr_user.getStatus() == 'A')
+		else if (curr_user.GetStatus() == 'A')
 			cout << "Status: Active" << endl;
 		else
 			cerr << "ERROR: Could not get status information." << endl;			
@@ -169,7 +169,7 @@ void TransactionHelper::login() {
 }
 
 // Logs user out from either account - administrator or standard
-void TransactionHelper::logout() {
+void TransactionHelper::Logout() {
 
 	if (is_logged) {
 		if (mode.compare("admin") == 0) {
@@ -188,7 +188,7 @@ void TransactionHelper::logout() {
 	}
 }
 
-void TransactionHelper::printHelp() {
+void TransactionHelper::PrintHelp() {
 
 	string file_name = "help.txt";
 	string line;

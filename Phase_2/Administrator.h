@@ -18,16 +18,16 @@ class Administrator: public virtual IAccount {
 		Administrator() {};
 		~Administrator() {}
 
-		void create();
-		void deleted(int acc_num);
-		void disable(int acc_num);
-		void enable(int acc_num);
-		void changeplan(int acc_num);
+		void Create();
+		void Deleted(int acc_num);
+		void Disable(int acc_num);
+		void Enable(int acc_num);
+		void Changeplan(int acc_num);
 
-		void withdrawal(int acc_num, float amount);
-		void transfer(int acc_num_f, int acc_num_t, float amount);
-		void paybill(int acc_num, string company, float amount);
-		void deposit(int acc_num, float amount);
+		void Withdrawal(int acc_num, float amount);
+		void Transfer(int acc_num_f, int acc_num_t, float amount);
+		void Paybill(int acc_num, string company, float amount);
+		void Deposit(int acc_num, float amount);
 	//	bool logout();
 };
 

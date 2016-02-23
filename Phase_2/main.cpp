@@ -41,8 +41,8 @@ TransactionHelper transactions;
 
 int main (int argc, char *argv[]) {
 
-	transactions.loadAccounts();
-	transactions.printWelcomeMessage();
+	transactions.LoadAccounts();
+	transactions.PrintWelcomeMessage();
 
 	string command;
 	is_logged = false;
@@ -61,17 +61,17 @@ int main (int argc, char *argv[]) {
 			cin >> command;
 
 			// If command is LOGIN
-			if (transactions.toLower(command).compare("login") == 0)
+			if (transactions.to_Lower(command).compare("login") == 0)
 				if (!is_logged) {
 					cout << "Enter mode in which you wish to log in as: ";
 					cin >> mode;
 
-					if (transactions.toLower(mode).compare("admin") == 0) {
+					if (transactions.to_Lower(mode).compare("admin") == 0) {
 						mode = "admin";
 						is_logged = true;
 						cout << "You are currently logged in as an administrator." << endl;
-					} else if (transactions.toLower(mode).compare("standard") == 0) {
-						transactions.login();
+					} else if (transactions.to_Lower(mode).compare("standard") == 0) {
+						transactions.Login();
 					} else {
 						cerr << "ERROR: Invalid account mode." << endl;
 					}
@@ -80,93 +80,93 @@ int main (int argc, char *argv[]) {
 				}
 
 			// If command is LOGOUT
-			else if (transactions.toLower(command).compare("logout") == 0)
-				transactions.logout();
+			else if (transactions.to_Lower(command).compare("logout") == 0)
+				transactions.Logout();
 
 			// If command is CREATE (Privileged)
-			else if (transactions.toLower(command).compare("create") == 0)
+			else if (transactions.to_Lower(command).compare("create") == 0)
 				if (is_logged) {
-					if (transactions.isAdmin()) 
-						a.create();
+					if (transactions.is_Admin()) 
+						a.Create();
 					else
 						cerr << "ERROR: You need to be an administrator to create a new account." << endl;
 				} else 
 					cerr << "ERROR: Must be logged in before invoking any other commands." << endl;
 
 			// If command is DELETE (Privileged)
-			else if (transactions.toLower(command).compare("delete") == 0) {
-				if (transactions.isAdmin()) {
+			else if (transactions.to_Lower(command).compare("delete") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter account number: ";
 					cin >> acc_num;
-						a.deleted(acc_num);
+						a.Deleted(acc_num);
 				} else {
 					cerr << "ERROR: You need to be an administrator to delete an account." << endl;
 				}
 
 			// If command is DISABLE (Privileged)
-			} else if (transactions.toLower(command).compare("disable") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("disable") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter account number: ";
 					cin >> acc_num;
-					a.disable(acc_num);
+					a.Disable(acc_num);
 				} else {
 					cerr << "ERROR: You need to be an administrator to disable an account." << endl;			
 				}
 
 			// If command is ENABLE (Privileged)
-			} else if (transactions.toLower(command).compare("enable") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("enable") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter account number: ";
 					cin >> acc_num;
-					a.enable(acc_num);
+					a.Enable(acc_num);
 				} else {
 					cerr << "ERROR: You need to be an administrator to enable an account." << endl;			
 				}
 			// If command is DEPOSIT
-			} else if (transactions.toLower(command).compare("deposit") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("deposit") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter account number: ";
 					cin >> acc_num;
 					cout << "Enter amount to deposit: ";
 					cin >> amount;
-					a.deposit(acc_num, amount);
+					a.Deposit(acc_num, amount);
 				} else {
 					cout << "Enter account number: ";
 					cin >> acc_num;
 					cout << "Enter amount to deposit: ";
 					cin >> amount;
-					s.deposit(acc_num, amount);
+					s.Deposit(acc_num, amount);
 				}
 
 			// If command is WITHDRAWAL
-			} else if (transactions.toLower(command).compare("withdrawal") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("withdrawal") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter account number: ";
 					cin >> acc_num;
 					cout << "Enter amount to withdraw: ";
 					cin >> amount;
-					a.withdrawal(acc_num, amount);
+					a.Withdrawal(acc_num, amount);
 				} else {
 					cout << "Enter account number: ";
 					cin >> acc_num;
 					cout << "Enter amount to withdraw: ";
 					cin >> amount;
-					s.withdrawal(acc_num, amount);
+					s.Withdrawal(acc_num, amount);
 				}
 
 			// If command is TRANSFER
-			} else if (transactions.toLower(command).compare("transfer") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("transfer") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter origin account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter origin account number: ";
@@ -175,7 +175,7 @@ int main (int argc, char *argv[]) {
 					cin >> acc_num_t;
 					cout << "Enter amount to transfer: ";
 					cin >> amount;
-					a.transfer(acc_num_f, acc_num_t, amount);
+					a.Transfer(acc_num_f, acc_num_t, amount);
 				} else {
 					cout << "Enter your account number: ";
 					cin >> acc_num_f;
@@ -183,12 +183,12 @@ int main (int argc, char *argv[]) {
 					cin >> acc_num_t;
 					cout << "Enter amount to transfer: ";
 					cin >> amount;
-					s.transfer(acc_num_f, acc_num_t, amount);
+					s.Transfer(acc_num_f, acc_num_t, amount);
 				}
 
 			// If command is PAYBILL
-			} else if (transactions.toLower(command).compare("paybill") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("paybill") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter origin account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter origin account number: ";
@@ -197,7 +197,7 @@ int main (int argc, char *argv[]) {
 					cin >> company;
 					cout << "Enter amount to pay: ";
 					cin >> amount;
-					a.paybill(acc_num_f, company, amount);
+					a.Paybill(acc_num_f, company, amount);
 				} else {
 					cout << "Enter origin account number: ";
 					cin >> acc_num_f;
@@ -205,27 +205,27 @@ int main (int argc, char *argv[]) {
 					cin >> company;
 					cout << "Enter amount to pay: ";
 					cin >> amount;
-					s.paybill(acc_num_f, company, amount);
+					s.Paybill(acc_num_f, company, amount);
 				}
 
 			// If command is CHANGEPLAN
-			} else if (transactions.toLower(command).compare("changeplan") == 0) {
-				if (transactions.isAdmin()) {
+			} else if (transactions.to_Lower(command).compare("changeplan") == 0) {
+				if (transactions.is_Admin()) {
 					cout << "Enter account holder's name: ";
 					cin >> acc_holder;
 					cout << "Enter account number: ";
 					cin >> acc_num;
-					a.changeplan(acc_num);
+					a.Changeplan(acc_num);
 				} else {
 					cerr << "ERROR: You need to be an administrator to change transcation payment plans." << endl;			
 				}
 
 			// If command is HELP
-			} else if (transactions.toLower(command).compare("help") == 0) {
-				transactions.printHelp();
+			} else if (transactions.to_Lower(command).compare("help") == 0) {
+				transactions.PrintHelp();
 
 			// If command is QUIT
-			} else if (transactions.toLower(command).compare("quit") == 0) {
+			} else if (transactions.to_Lower(command).compare("quit") == 0) {
 				if (!is_logged)
 					return 1;
 				else
