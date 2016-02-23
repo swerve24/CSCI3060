@@ -35,10 +35,13 @@ class User {
   void SetStatus(char status) {std_acc_.SetStatus(status);}
   void SetPlan(char plan) {std_acc_.SetPlan(plan);}
 
-  void Withdrawal(int acc_num_, float amount) {std_acc_.Withdrawal(acc_num_, amount);}
-  void Transfer(int acc_num_f, int acc_num_t, float amount) {std_acc_.Transfer(acc_num_f, acc_num_t, amount);}
-  void Paybill(int acc_num_, string company, float amount) {std_acc_.Paybill(acc_num_, company, amount);}
+  void Withdrawal(int acc_num_, float amount) {
+    std_acc_.Withdrawal(acc_num_, amount);}
+  void Transfer(int acc_num_f, int acc_num_t, float amount) {
+    std_acc_.Transfer(acc_num_f, acc_num_t, amount);}
+  void Paybill(int acc_num_, string company, float amount) {
+    std_acc_.Paybill(acc_num_, company, amount);}
   void Deposit(int acc_num_, float amount) {std_acc_.Deposit(acc_num_, amount);}
 };
-  
+
 #endif

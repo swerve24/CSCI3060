@@ -1,22 +1,26 @@
 #include "Administrator.h"
 
 void Administrator::Withdrawal(int acc_num, float amount) {
-  cout << "Funds have successfully been withdrawn from the account " << acc_num << "." << endl;
+  cout << "Funds have successfully been withdrawn from the account " <<
+           acc_num << "." << endl;
   cout << "New balance: " << endl;
 }
 
 void Administrator::Transfer(int acc_num_f, int acc_num_t, float amount) {
-  cout << "Funds have been successfully transfered from account " <<  acc_num_f <<  " to account " << acc_num_t << "." <<endl;
+  cout << "Funds have been successfully transfered from account " <<
+           acc_num_f <<  " to account " << acc_num_t << "." << endl;
   cout << "New balance: " << endl;
 }
 
 void Administrator::Paybill(int acc_num, string company, float amount) {
-  cout << "You have successfully paid a bill of $" << amount << " from account " << acc_num << " to " << company << "." << endl;
+  cout << "You have successfully paid a bill of $" << amount <<
+          " from account " << acc_num << " to " << company << "." << endl;
   cout << "New balance: " << endl;
 }
 
 void Administrator::Deposit(int acc_num, float amount) {
-  cout << "Funds have been successfully added to the account " << acc_num << "." <<endl;
+  cout << "Funds have been successfully added to the account " <<
+           acc_num << "." <<endl;
   cout << "New balance: " << endl;
 }
 
@@ -59,7 +63,8 @@ void Administrator::Create() {
 
 void Administrator::Deleted(int acc_num) {
   string choice;
-  cout << "Are you sure you want to delete " << acc_holder << "\'s account " << acc_num << " (yes/no)? ";
+  cout << "Are you sure you want to delete " << acc_holder << "\'s account " <<
+           acc_num << " (yes/no)? ";
   cin >> choice;
   if (choice.compare("yes") == 0)
     cout << "The account " << acc_num <<  " has been deleted successfully." << endl;
@@ -79,5 +84,6 @@ void Administrator::Enable(int acc_num) {
 
 void Administrator::Changeplan(int acc_num) {
   string plan = "Student";
-  cout << "The transaction payment plan for account " << acc_num << " has been successfully changed to " << plan << endl;
+  cout << "The transaction payment plan for account " << acc_num << 
+          " has been successfully changed to " << plan << endl;
 }
