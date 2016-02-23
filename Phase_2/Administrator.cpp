@@ -1,18 +1,29 @@
 #include "Administrator.h"
 
-void Administrator::withdrawal(int acc_num, float amount) {}
-void Administrator::transfer(int acc_num_f, int acc_num_t, float amount) {}
-void Administrator::paybill(int acc_num, string company, float amount) {}
-void Administrator::deposit(int acc_num, float amount) {}
-/*
-bool Administrator::logout(){
-	cout << "From Administrator class" << endl;
+void Administrator::withdrawal(int acc_num, float amount) {
+	cout << "Funds have successfully been withdrawn from the account " << acc_num << "." << endl;
+	cout << "New balance: " << endl;
 }
-*/
 
-void Administrator::create(vector<User>& users) {
+void Administrator::transfer(int acc_num_f, int acc_num_t, float amount) {
+	cout << "Funds have been successfully transfered from account " <<  acc_num_f <<  " to account " << acc_num_t << "." <<endl;
+	cout << "New balance: " << endl;
+}
+
+void Administrator::paybill(int acc_num, string company, float amount) {
+	cout << "You have successfully paid a bill of $" << amount << " from account " << acc_num << " to " << company << "." << endl;
+	cout << "New balance: " << endl;
+}
+
+void Administrator::deposit(int acc_num, float amount) {
+	cout << "Funds have been successfully added to the account " << acc_num << "." <<endl;
+	cout << "New balance: " << endl;
+}
+
+void Administrator::create() {
 
 	string new_name;
+	float init_balance;
 	
 	cout << "Enter new account holder's name: ";
 	//cin >> new_name;
@@ -33,26 +44,40 @@ void Administrator::create(vector<User>& users) {
 	if (!transactions.holderExists(new_name) && new_name.compare("admin") != 0
 		&& transactions.isNameValid(new_name)) {
 		// Assign new account number here using
+		// Prompt for initial balance and check it's valid
 		// Then create new User and add it to the users vector
-		cout << "Assigning new account a bank account number." << endl;
+		cout << "Enter the initial balance: " << endl;
+		cin >> init_balance;
+		cout << "You have successfully created a new account." << endl;
+		cout << "Account number: " << endl;
+		cout << "Account holder's name: " << new_name << endl;
+		cout << "Account balance: " << init_balance << endl;
 	} else {
 		cerr << "ERROR: This account name is already in use. Please pick a different one." << endl;
 	}
 }
 
 void Administrator::deleted(int acc_num) {
-	cout << "Deleting account " << acc_num <<  " - Administrator class" << endl;
+	string choice;
+	cout << "Are you sure you want to delete " << acc_holder << "\'s account " << acc_num << " (yes/no)? ";
+	cin >> choice;
+	if (choice.compare("yes") == 0)
+		cout << "The account " << acc_num <<  " has been deleted successfully." << endl;
+	else if (choice.compare("no") == 0)
+		cout << "The deletion of account " << acc_num << " has been aborted." << endl;
+	else
+		cerr << "ERROR: This is not a valid input." << endl;
 }
 
 void Administrator::disable(int acc_num) {
-	cout << "Disabling account " << acc_num << " - Administrator class" << endl;
+	cout << "The account " << acc_num <<  " has been disabled successfully." << endl;
 }
 
 void Administrator::enable(int acc_num) {
-	cout << "Enabling account " << acc_num << " - Administrator class" << endl;
+	cout << "The account " << acc_num <<  " has been enabled successfully." << endl;
 }
 
 void Administrator::changeplan(int acc_num) {
 	string plan = "Student";
-	cout << "Changing the transaction payment plan of account " << acc_num << " to " << plan << " - Administrator class" << endl;
+	cout << "The transaction payment plan for account " << acc_num << " has been successfully changed to " << plan << endl;
 }

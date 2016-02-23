@@ -18,7 +18,7 @@ class Administrator: public virtual IAccount {
 		Administrator() {};
 		~Administrator() {}
 
-		void create(vector<User>& users);
+		void create();
 		void deleted(int acc_num);
 		void disable(int acc_num);
 		void enable(int acc_num);

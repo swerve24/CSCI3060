@@ -34,15 +34,15 @@ class TransactionHelper {
 	bool isAdmin();
 
 	// Check if the account holder name inputed exists in the "database"
-	bool holderExists(string acc_holder);
+	bool holderExists(string name);
 
 	/* Check that the new account holder name entered follows the
 	 * required constraints. Done using regex.
 	 */
-	bool isNameValid(string acc_holder);
+	bool isNameValid(string name);
 
 	// Checks that both arguments correspond to eachother
-	bool matches(string acc_holder, int acc_num);
+	bool matches(string name, int acc_num);
 
 	/* Checks that the amound of funds entered is valid
 	 * (e.g. formatting). Done using regex.

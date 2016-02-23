@@ -20,14 +20,15 @@ bool TransactionHelper::isAdmin() {
 }
 
 // Check if the account holder name inputed exists in the "database"
-bool TransactionHelper::holderExists(string acc_holder) {
+bool TransactionHelper::holderExists(string name) {
 
-	bool ret;
+	bool ret = false;
 
 	for (int i = 0; i < users.size(); i++) {
-		if (users.at(i).getName().compare(acc_holder) == 0)
+		if (users.at(i).getName().compare(name) == 0) {			
 			ret = true;
-		else ret = false;	
+			break;
+		}
 	}
 
 	return ret;
@@ -36,18 +37,18 @@ bool TransactionHelper::holderExists(string acc_holder) {
 /* Check that the new account holder name entered follows the
  * required constraints. Done using regex.
  */
-bool TransactionHelper::isNameValid(string acc_holder) {
+bool TransactionHelper::isNameValid(string name) {
 	
 	regex re("[a-zA-Z0-9 -]+");
 
-  	if (regex_match(acc_holder, re))
+  	if (regex_match(name, re))
   		return true;
 	else
 		return false;
 }
 
 // Checks that both arguments correspond to eachother
-bool TransactionHelper::matches(string acc_holder, int acc_num) {
+bool TransactionHelper::matches(string name, int acc_num) {
 	return true;
 }
 
@@ -134,7 +135,7 @@ void TransactionHelper::login() {
 	 * update the curr_user User object with the new curr_user
 	 * information for future transactions
 	 */
-	if (holderExists(acc_holder)) {
+	if (holderExists(acc_holder) && acc_holder != "END_OF_FILE") {
 
 		is_logged = true;
 
