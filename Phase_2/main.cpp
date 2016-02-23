@@ -1,10 +1,19 @@
+/* This software is the front-end design of the Watermelon Banking System.
+ * It is to be ran as a console application.
+ * Input(s): Command line and file input
+ * Output(s): Command line prompts and file output.
+ * 
+ * main.cpp
+ * 
+ * Authors: Denesh Parthipan, Luisa Rojas, Truyen Truong
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
-#include <regex>
 #include "User.h"
 #include "TransactionHelper.h"
 #include "Standard.h"
@@ -12,10 +21,16 @@
 
 using namespace std;
 
-// Used to call the different functions for each case
+/* These class objects will be used to refence
+ * the different methods as needed.
+ */
 Standard s;
 Administrator a;
 
+/* Second declaration of external global variables.
+ * Needed in order to access and edit them from any
+ * class.
+ */
 User curr_user;
 vector<User> users;
 vector<string> transaction_file;
@@ -38,10 +53,11 @@ int main (int argc, char *argv[]) {
 	int acc_num_f;
 	string company;
 
-	if (argc == 1) { // for command line inputs only
+	// For command line input only
+	if (argc == 1) {
 
+		// Permanently listening for commands
 		while(true) {
-
 			cin >> command;
 
 			// If command is LOGIN
@@ -218,11 +234,12 @@ int main (int argc, char *argv[]) {
 				cerr << "ERROR: Invalid command." << endl;
 			}
 		}
-
-	} else  if (argc == 2) { // argc should be 1 for correct execution with text inputs
-    	// argv[0] would be the first argument - <filename>
-
- 	} else {
+	 /* argc should be 1 element for a correct execution 
+	  * with text file inputs
+	  */
+	} else  if (argc == 2) {
+	
+	} else {
  		cerr << "ERROR: Too many arguments." << endl;
  		return -1;
 	}
