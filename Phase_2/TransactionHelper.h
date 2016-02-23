@@ -22,58 +22,57 @@ extern bool is_logged;
 extern TransactionHelper transactions;
 
 class TransactionHelper {
+ public:
 
-	public:
+  /* To compare user input - should accept variations
+   * (e.g. "Standard", "standard", "STANDARD", etc)
+   */
+  string to_Lower(string str);
 
-	/* To compare user input - should accept variations
-	 * (e.g. "Standard", "standard", "STANDARD", etc)
-	 */
-	string to_Lower(string str);
+  // Check if the curret user is an administrator
+  bool is_Admin();
 
-	// Check if the curret user is an administrator
-	bool is_Admin();
+  // Check if the account holder name inputed exists in the "database"
+  bool HolderExists(string name);
 
-	// Check if the account holder name inputed exists in the "database"
-	bool HolderExists(string name);
+  /* Check that the new account holder name entered follows the
+   * required constraints. Done using regex.
+   */
+  bool is_Name_Valid(string name);
 
-	/* Check that the new account holder name entered follows the
-	 * required constraints. Done using regex.
-	 */
-	bool is_Name_Valid(string name);
+  // Checks that both arguments correspond to eachother
+  bool Matches(string name, int acc_num);
 
-	// Checks that both arguments correspond to eachother
-	bool Matches(string name, int acc_num);
+  /* Checks that the amound of funds entered is valid
+   * (e.g. formatting). Done using regex.
+   */
+  bool is_Amount_Valid(float amount);
 
-	/* Checks that the amound of funds entered is valid
-	 * (e.g. formatting). Done using regex.
-	 */
-	bool is_Amount_Valid(float amount);
+  // Checks if the account provided is active or disabled
+  bool is_Disabled(int acc_num);
 
-	// Checks if the account provided is active or disabled
-	bool is_Disabled(int acc_num);
+  /* Checks if the user's transaction payment plan
+   * (student or non-student)
+   */
+  bool is_Student(int acc_num);
 
-	/* Checks if the user's transaction payment plan
-	 * (student or non-student)
-	 */
-	bool is_Student(int acc_num);
+  // Outputs the transaction_file vector into a file
+  void WriteTransferFile();
 
-	// Outputs the transaction_file vector into a file
-	void WriteTransferFile();
+  /* Loads all accounts' information from the
+   * current_bank_accounts_file.txt file (provided by the back end)
+   */
+  void LoadAccounts();
 
-	/* Loads all accounts' information from the
-	 * current_bank_accounts_file.txt file (provided by the back end)
-	 */
-	void LoadAccounts();
+  void PrintWelcomeMessage();
 
-	void PrintWelcomeMessage();
+  // Allows the users to log in as a STANDARD user
+  void Login();
 
-	// Allows the users to log in as a STANDARD user
-	void Login();
+  // Logs user out from either account - administrator or standard
+  void Logout();
 
-	// Logs user out from either account - administrator or standard
-	void Logout();
-
-	void PrintHelp();
+  void PrintHelp();
 };
 
 #endif
