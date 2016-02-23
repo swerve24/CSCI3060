@@ -1,3 +1,9 @@
+ /* 
+ * Standard.cpp
+ * 
+ * Authors: Denesh Parthipan, Luisa Rojas, Truyen Truong
+ */
+
 #include "Standard.h"
 
 void Standard::Withdrawal(int acc_num_, float amount) {

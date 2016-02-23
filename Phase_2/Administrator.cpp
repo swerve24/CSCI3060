@@ -1,3 +1,9 @@
+/* 
+ * Administrator.cpp
+ * 
+ * Authors: Denesh Parthipan, Luisa Rojas, Truyen Truong
+ */
+
 #include "Administrator.h"
 
 void Administrator::Withdrawal(int acc_num, float amount) {

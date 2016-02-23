@@ -1,3 +1,9 @@
+/* 
+ * TransactionHelper.cpp
+ * 
+ * Authors: Denesh Parthipan, Luisa Rojas, Truyen Truong
+ */
+
 #include "TransactionHelper.h"
 #include "User.h"
 
@@ -200,6 +206,6 @@ void TransactionHelper::PrintHelp() {
     infile.close();
   } else {
     cerr << "ERROR: File \"" << file_name << "\" was not found." << endl;
-  exit(-1);
+    exit(-1);
   }
 }

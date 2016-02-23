@@ -1,3 +1,9 @@
+/* 
+ * TransactionHelper.h
+ * 
+ * Authors: Denesh Parthipan, Luisa Rojas, Truyen Truong
+ */
+
 #ifndef TRANSACTIONHELPER_H
 #define TRANSACTIONHELPER_H
 #include <stdio.h>
@@ -64,6 +70,7 @@ class TransactionHelper {
    */
   void LoadAccounts();
 
+  // Prints out the welcome message.
   void PrintWelcomeMessage();
 
   // Allows the users to log in as a STANDARD user
@@ -72,6 +79,7 @@ class TransactionHelper {
   // Logs user out from either account - administrator or standard
   void Logout();
 
+  // Prints the help menu.
   void PrintHelp();
 };
 
