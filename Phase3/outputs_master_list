@@ -1,0 +1,79 @@
+----------------> START-UP DIALOG <----------------
+ __    __      _                           _             
+/ / /\ \ \__ _| |_ ___ _ __ _ __ ___   ___| | ___  _ __  
+\ \/  \/ / _` | __/ _ \ '__| '_ ` _ \ / _ \ |/ _ \| '_ \ 
+ \  /\  / (_| | ||  __/ |  | | | | | |  __/ | (_) | | | |
+  \/  \/ \__,_|\__\___|_|  |_| |_| |_|\___|_|\___/|_| |_|
+  
+Welcome to Watermelon Banking System.
+Please log in to begin or enter "help" for more information.
+
+----------------> LOGIN STANDARD - SUCCESSFUL TEST<-----------------
+
+Enter mode in which you wish to log in as:
+Enter account holder's name:
+
+You are currently logged in as ACC_HOLDER.
+Bank account number: ACC_NUM
+Balance: ACC_BALANCE
+Transaction payment plan: PLAN
+Status: STATUS
+
+Enter a command.
+
+----------------> LOGIN STANDARD - FAILED TESTS <-----------------
+
+>>> ERROR: There is a session running. Please log out and try again.
+>>> ERROR: Invalid account mode.
+>>> ERROR: The account holder entered is invalid.
+
+-----------> LOGIN ADMINISTRATOR - SUCCESSFUL TEST <------------
+
+Enter mode in which you wish to log in as: MODE
+
+You are currently logged in as an administrator.
+
+Enter a command.
+
+-------------> LOGIN ADMINISTRATOR - FAILED TESTS <--------------
+
+>>> ERROR: There is a session running. Please log out and try again.
+>>> ERROR: Invalid account mode.
+
+-----------> LOGOUT STANDARD AND ADMINISTRATOR - SUCCESSFUL TEST <------------
+
+You have successfully logged out of your account.
+
+Login or enter "help" for more information.
+
+-----------> LOGOUT STANDARD AND ADMINISTRATOR - FALED TEST <------------
+
+>>> ERROR: You are not currently logged into an account.
+
+----------------> CREATE ADMINISTRATOR - SUCCESSFUL TEST <-----------------
+
+Create transaction selected.
+
+Enter new account holder's name: ACC_HOLDER
+The new account holder's name has been truncated to: NEW_ACC_NAME. NOTE THIS LINE DOESNT ALWAYS APPLY.
+Enter initial balance: INIT_BALANCE
+
+You have successfully created a new account.
+Bank account number: ACC_NUM
+Balance: BALANCE
+Transaction payment plan: PLAN
+Status: STATUS
+
+----------------> CREATE ADMINISTRATOR - FAILED TESTS <-----------------
+
+>>> ERROR: The account holder name entered is already in use. Please pick a different one.
+
+>>> ERROR: The initial balance entered is not valid.
+
+----------------> CREATE STANDARD - FAILED TESTS <-----------------
+
+>>> ERROR: You need to be an administrator to create a new account.
+
+-------------> OTHER - FAILED TESTS <--------------
+
+>>> ERROR: You must be logged in before invoking any other commands.
