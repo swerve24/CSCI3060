@@ -1,8 +1,9 @@
 Welcome to Watermelon Banking System
-Please login to begin or type in ìhelpî for more information.
+Please login to begin or type in ‚Äúhelp‚Äù for more information.
 Mode in which you wish to login as:
 You are currently logged in as an administrator.
-Enter account holderís name:
+Enter Transaction Command: 
+Enter account holder‚Äôs name:
 Enter account number:
 The transaction payment plan for account 00008 has been successfully changed to student.
 You have successfully logged out of the administrator account.
